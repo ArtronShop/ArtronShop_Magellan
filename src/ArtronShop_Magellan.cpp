@@ -82,6 +82,8 @@ void ArtronShop_Magellan::setAuth(String thing_identify, String thing_secret, St
         String clientId = "ESP8266Client-";
         clientId += String(random(0xffff), HEX);
         thingAuthInfo.name = clientId;
+    } else {
+        thingAuthInfo.name = thing_name;
     }
 }
 
