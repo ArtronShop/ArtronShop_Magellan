@@ -1,0 +1,26 @@
+#######################################
+# Syntax Coloring Map For SIM76xx
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+ArtronShop_Magellan KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setAuth	KEYWORD2
+
+connect	KEYWORD2
+isConnected	KEYWORD2
+setSensorValue	KEYWORD2
+pushData	KEYWORD2
+addControlSensorHandle	KEYWORD2
+loop	KEYWORD2
+stop	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
+
