@@ -21,15 +21,15 @@ class ArtronShop_Magellan {
         bool isConnected() ;
 
         // Push Data
-        #define DEFIND_SET_SETNSOR_FN(TYPE) void setSensorValue(String name, TYPE value)
-        DEFIND_SET_SETNSOR_FN(String) ;
-        DEFIND_SET_SETNSOR_FN(char*) ;
-        DEFIND_SET_SETNSOR_FN(int) ;
-        DEFIND_SET_SETNSOR_FN(unsigned int) ;
-        DEFIND_SET_SETNSOR_FN(long) ;
-        DEFIND_SET_SETNSOR_FN(unsigned long) ;
-        DEFIND_SET_SETNSOR_FN(float) ;
-        DEFIND_SET_SETNSOR_FN(double) ;
+        #define DEFIND_SET_SENSOR_FN(TYPE) void setSensorValue(String name, TYPE value)
+        DEFIND_SET_SENSOR_FN(String) ;
+        DEFIND_SET_SENSOR_FN(char*) ;
+        DEFIND_SET_SENSOR_FN(int) ;
+        DEFIND_SET_SENSOR_FN(unsigned int) ;
+        DEFIND_SET_SENSOR_FN(long) ;
+        DEFIND_SET_SENSOR_FN(unsigned long) ;
+        DEFIND_SET_SENSOR_FN(float) ;
+        DEFIND_SET_SENSOR_FN(double) ;
         bool pushData() ;
 
         // Get sensor data (Control)

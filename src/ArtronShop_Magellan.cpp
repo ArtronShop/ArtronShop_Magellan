@@ -107,19 +107,19 @@ bool ArtronShop_Magellan::isConnected() {
     return this->mqttClient->connected();
 }
 
-#define DEFINE_SET_SETNSOR_FN_CODE(TYPE) \
+#define DEFINE_SET_SENSOR_FN_CODE(TYPE) \
     void ArtronShop_Magellan::setSensorValue(String name, TYPE value) { \
         this->jsonDoc->getOrAddMember(name).set(value); \
     }
 
-DEFINE_SET_SETNSOR_FN_CODE(String);
-DEFINE_SET_SETNSOR_FN_CODE(char *);
-DEFINE_SET_SETNSOR_FN_CODE(int);
-DEFINE_SET_SETNSOR_FN_CODE(unsigned int);
-DEFINE_SET_SETNSOR_FN_CODE(long);
-DEFINE_SET_SETNSOR_FN_CODE(unsigned long);
-DEFINE_SET_SETNSOR_FN_CODE(float);
-DEFINE_SET_SETNSOR_FN_CODE(double);
+DEFINE_SET_SENSOR_FN_CODE(String);
+DEFINE_SET_SENSOR_FN_CODE(char *);
+DEFINE_SET_SENSOR_FN_CODE(int);
+DEFINE_SET_SENSOR_FN_CODE(unsigned int);
+DEFINE_SET_SENSOR_FN_CODE(long);
+DEFINE_SET_SENSOR_FN_CODE(unsigned long);
+DEFINE_SET_SENSOR_FN_CODE(float);
+DEFINE_SET_SENSOR_FN_CODE(double);
 
 bool ArtronShop_Magellan::pushData() {
     if (!this->isConnected()) {
@@ -132,12 +132,7 @@ bool ArtronShop_Magellan::pushData() {
     String topic = "api/v2/thing/" + String(thingAuthInfo.token) + "/report/persist";
     bool res = this->mqttClient->publish(topic.c_str(), dataJsonString.c_str());
     LOG("Push: %s", dataJsonString.c_str());
-
-    if (!res) {
-        return false;
-    }
-
-    return true;
+    return res;
 }
 
 void ArtronShop_Magellan::addControlSensorHandle(String name, ControlSensorHandle handle) {
