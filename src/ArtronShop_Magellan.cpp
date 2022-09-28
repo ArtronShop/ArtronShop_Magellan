@@ -69,6 +69,7 @@ ArtronShop_Magellan::ArtronShop_Magellan(Client *c) {
 
     this->mqttClient->setServer(MAGELLAN_SERVER, MAGELLAN_PORT);
     this->mqttClient->setCallback(mqtt_callback);
+    this->mqttClient->setKeepAlive(2 * 60); // 2 min
 }
 
 void ArtronShop_Magellan::setAuth(String thing_identify, String thing_secret, String thing_token, String thing_name) {
