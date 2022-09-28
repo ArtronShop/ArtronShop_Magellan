@@ -94,7 +94,7 @@ bool ArtronShop_Magellan::connect() {
     LOG(" --- Password: %s", thingAuthInfo.secret.c_str());
     if (this->mqttClient->connect(thingAuthInfo.name.c_str(), thingAuthInfo.identify.c_str(), thingAuthInfo.secret.c_str())) {
         LOG("connected");
-        this->mqttClient->subscribe(String("api/v2/thing/" + String(thingAuthInfo.token) + "/report/resp").c_str());
+        // this->mqttClient->subscribe(String("api/v2/thing/" + String(thingAuthInfo.token) + "/report/resp").c_str());
         this->mqttClient->subscribe(String("api/v2/thing/" + String(thingAuthInfo.token) + "/delta/resp").c_str());
 
         this->mqttClient->publish(String("api/v2/thing/" + String(thingAuthInfo.token) + "/delta/req").c_str(), "");
